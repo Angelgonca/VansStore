@@ -118,7 +118,7 @@ header img {
 
 .products {
   width: 80%;
-  margin: 40px auto;
+  margin: -70px 10%;
   padding: 20px;
   box-sizing: border-box;
   display: grid;
@@ -225,6 +225,15 @@ footer article p {
     width: 100%;
     padding: 5px 5px 25px;
   }
+
+  .submenu {
+    height: 23%;
+    width: 35%;
+    &.show {
+      right: 68%;
+    }
+  }
+
   header i {
     width: 6%;
   }
@@ -251,6 +260,11 @@ footer article p {
   .cart {
     width: 400px;
     top: 80px;
+  
+      &.show {
+        right: -58%;
+      }
+
   }
   footer article p {
     margin: 0 35%;
@@ -286,5 +300,15 @@ footer article p {
   }
   footer article p {
     margin: 0 35%;
+  }
+  .cart {
+    width: 400px;
+    top: 80px;
+  
+      &.show {
+        right: -22%;
+      }
+
+
   }
 }/*# sourceMappingURL=styles.css.map */
