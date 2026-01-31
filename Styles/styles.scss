@@ -1,0 +1,302 @@
+$mainColor: #ece9e9;
+$mainColorText: #d58300;
+$mainColorWhite: #fff;
+$mainBackgroundColor: #333;
+$fontFamily:"Lexend", arial, sans-serif;
+$textShadow: 1px 1px 1px #333;  
+
+@mixin flexbox {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin cursor {
+  cursor: pointer;
+}
+
+%link {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+%button {
+  border-radius: 30%;
+  text-align: center;
+  width: 40%;
+  font-weight: 500;
+  color: $mainColor;
+  background-color: $mainBackgroundColor;
+}
+
+
+* {
+    font-family: $fontFamily; 
+}
+  
+  
+  
+body {
+    width: 100%;
+    font-size: 15px;
+    text-shadow: $textShadow;
+    Font-weight: 300;
+    margin: 0;
+    Color: $mainColorText;
+    background-color: $mainColor ;
+}
+  
+header {
+    @extend %link; 
+    padding: 0px 0px 60px 0px;
+    background-color: #333;
+    background-image: url("../img/zapatos.png");
+    background-size: 8%;
+    background-position-y: -5px;
+    @include flexbox;
+    box-sizing: border-box;
+
+    img {
+      width: 40px;
+      height: 40px;
+      @include cursor;
+    }
+}
+
+  
+.banner {
+    @extend %link;
+    margin: -25px 0px 25px 0px;
+    text-align: right;
+    background-image: url("../img/banner11.jpg");
+    background-size: cover;
+    color: $mainColorWhite;
+  
+
+  .banner__title {
+    width: 100%;
+    font-weight: 600;
+    font-size: 35px;  
+    text-shadow: $textShadow;  
+    margin: 0% -1.5%;
+  }
+  
+  .banner__title--text {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    text-shadow: $textShadow;  
+    opacity: 0.6;
+    text-align: right;
+    margin: 0% -2%;
+  }
+}
+
+.products {
+  width: 80%;
+  margin: 40px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+  
+  
+  .products__article {
+    @include cursor;
+    text-align: center;
+  }
+  
+  img {
+    width: 180px;
+    margin-bottom: -15px;
+  }
+  
+  h3 {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+  
+  p {
+    font-weight: 200;
+    font-size: 12px;
+  }
+}
+
+  button {
+     @extend %button;
+}
+
+/*hay que modificar el valor de "right:-50%" para poder ver el menu*/ 
+
+.cart {
+  width: 400px;
+  background-color: $mainColorWhite;
+  padding: 25px;
+  box-sizing: border-box;
+  height: 100%;
+  position: fixed;
+  right: -50%;
+  top: 100px;
+  box-shadow: -19px -1px 22px -15px #333;
+
+  article {
+  
+    h2 {
+      width: 100%;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+      padding: 15px 0;
+      box-sizing: border-box;
+      }
+  
+    div {
+      border-bottom: 1px solid #333;
+      @include flexbox;
+      align-items: center;    
+      padding: 10px;
+      }
+  
+    img {
+      width: 60px;
+      }
+  
+    p:nth-child(3) {
+      font-weight: 500;
+      color: #333;
+      }
+  
+    div i {
+      width: 14px;
+      }
+  
+    .delete-icon {
+      width: 100%;
+      @include cursor;
+    }
+  }
+}
+
+
+footer {
+    @extend %link;
+    background-image: url("../img/vans-banner.png");
+    background-size: cover;
+    display: block;
+    padding: 5% 0%;
+   
+  article {
+    p {
+      background-color: $mainColorWhite;
+      text-align: center;
+      box-sizing: border-box;
+      border-radius: 30px;
+      margin: 0% 40%;
+      border: 1px dotted #000000;
+    }
+  }
+}
+
+  
+  
+  
+  
+@media (max-width: 820px) {
+
+ .header {
+      width: 100%;
+      padding: 5px 5px 25px;
+    }
+  
+      header i {
+        width: 6%;
+    }
+  
+    .banner {
+        .banner__title {
+          font-size: 27px;
+          text-shadow: $textShadow;  
+        }
+
+        .banner__title--text {
+          font-size: 13px;
+          text-shadow: $textShadow; 
+         }
+    }
+
+    .products {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+
+    .products h3 {
+      font-size: 15px;
+    }
+    
+    .products p { 
+      font-size: 12px;
+    }
+
+
+    .products img {
+        width: 150px;
+    }
+  
+    .cart {
+        width: 400px;
+        top: 80px
+    }
+
+    footer {
+      article p {
+      margin: 0 35%;
+    }
+   }
+}
+
+
+  
+@media (max-width: 480px) {
+    .header {
+      width: 100%;
+      padding: 1px 1Px 25px;
+      background-size: 13%;
+    }
+  
+    header i {
+      width: 10%;
+    }
+    
+    .banner {
+       gap: 10px;
+       display: flex;
+       flex-wrap: wrap;
+      
+      .banner__title {
+        font-size: 22px;
+        text-shadow: $textShadow;  
+      }
+
+      .banner__title--text {
+        font-size: 13px;
+        text-shadow: $textShadow; 
+       }
+  }
+
+  
+    .products h3 {
+      font-size: 14px;
+    }
+    
+    .products p { 
+      font-size: 11px;
+    }
+
+
+    footer {
+      article p {
+      margin: 0 35%;
+    }
+    }
+}
